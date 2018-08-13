@@ -37,6 +37,8 @@ def table_read(filename, start, end, type):
         reader = csv.reader(f)
         final_table = {}
         for row in reader:
+            if row[0] == 'Team':
+                continue
             final_table[row[0]] = remove_quote(row, start, end, type)
     f.close()
     return final_table
@@ -44,6 +46,7 @@ def table_read(filename, start, end, type):
 def table_write(filename, table):
     with open(filename, 'w') as f:
         writer = csv.writer(f)
+        writer.writerows(table)
     f.close()
 
 def get_sum(goals):
@@ -88,11 +91,10 @@ def change_table(local_table, latest_table):
         local_table[team[0]] = team[1:9]
     return local_table
 
-
-def main():
-    latest_table = scrape('https://www.bbc.co.uk/sport/football/premier-league/table')
-    local_table = table_read('pltable.csv', 0, 9, 0)
-    local_form = table_read('plform.csv', 2, 8, 1)
+def make_table(url, formfile, tablefile):
+    latest_table = scrape(url)
+    local_table = table_read(tablefile, 0, 9, 0)
+    local_form = table_read(formfile, 2, 8, 1)
 
     for team in latest_table:
         if team[1] != local_table[team[0]][0]:
@@ -103,9 +105,31 @@ def main():
             local_form = change_form(local_table, local_form, team[0], goals_scored, goals_conceded, result)
     local_table = change_table(local_table, latest_table)
 
+    local_table_write = []
+    local_form_write = []
+    for team in local_table.keys():
+        temp1 = (local_table[team])
+        temp2 = (local_form[team])
+        temp1.insert(0, team)
+        temp2.insert(0, team)
+        local_table_write.append(temp1)
+        local_form_write.append(temp2)
+
+    local_table_write.sort(key=lambda l: (l[8], l[7], l[5]), reverse=True)
+    local_form_write.sort(key=lambda l: (l[6], l[5], l[3]), reverse=True)
+
+    local_table_write.insert(0, ['Team', 'Played', 'Won', 'Drawn', 'Lost', 'GF', 'GA', 'GD', 'Points'])
+    local_form_write.insert(0, ['Team', 'GF(Individual)', 'GA(Individual)', 'GF(Cumulative)', 'GA(Cumulative)', 'GD',
+                                'Points(6)', 'Form'])
+
+    table_write('pltable.csv', local_table_write)
+    table_write('plform.csv', local_form_write)
+
+    print('Done!')
 
 
-
+def main():
+    make_table('https://www.bbc.co.uk/sport/football/premier-league/table', 'plform.csv', 'pltable.csv')
 
 if __name__ == '__main__':
     main()
