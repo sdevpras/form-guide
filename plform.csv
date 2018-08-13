@@ -1,21 +1,21 @@
-Team,GF(Individual),GA(Individual),GF(Cumulative),GA(Cumulative),GD,Points(6),Form 
-Man Utd,-1,-1,0,0,0,0,-1 
-Tottenham,-1,-1,0,0,0,0,-1 
-Arsenal,-1,-1,0,0,0,0,-1 
-Bournemouth,-1,-1,0,0,0,0,-1 
-Brighton,-1,-1,0,0,0,0,-1 
-Burnley,-1,-1,0,0,0,0,-1 
-Cardiff,-1,-1,0,0,0,0,-1 
-Chelsea,-1,-1,0,0,0,0,-1 
-Crystal Palace,-1,-1,0,0,0,0,-1 
-Everton,-1,-1,0,0,0,0,-1 
-Fulham,-1,-1,0,0,0,0,-1 
-Huddersfield,-1,-1,0,0,0,0,-1 
-Liverpool,-1,-1,0,0,0,0,-1 
-Man City,-1,-1,0,0,0,0,-1 
-Southampton,-1,-1,0,0,0,0,-1 
-Watford,-1,-1,0,0,0,0,-1 
-West Ham,-1,-1,0,0,0,0,-1 
-Wolves,-1,-1,0,0,0,0,-1 
-Leicester,-1,-1,0,0,0,0,-1 
-Newcastle,-1,-1,0,0,0,0,-1 
+Team,GF(Individual),GA(Individual),GF(Cumulative),GA(Cumulative),GD,Points(6),Form
+Liverpool,4,0,4,0,4,3,W
+Chelsea,3,0,3,0,3,3,W
+Bournemouth,2,0,2,0,2,3,W
+Man City,2,0,2,0,2,3,W
+Watford,2,0,2,0,2,3,W
+Crystal Palace,2,0,2,0,2,3,W
+Tottenham,2,1,2,1,1,3,W
+Man Utd,2,1,2,1,1,3,W
+Everton,2,2,2,2,0,1,D
+Wolves,2,2,2,2,0,1,D
+Burnley,0,0,0,0,0,1,D
+Southampton,0,0,0,0,0,1,D
+Leicester,1,2,1,2,-1,0,L
+Newcastle,1,2,1,2,-1,0,L
+Arsenal,0,2,0,2,-2,0,L
+Brighton,0,2,0,2,-2,0,L
+Fulham,0,2,0,2,-2,0,L
+Cardiff,0,2,0,2,-2,0,L
+Huddersfield,0,3,0,3,-3,0,L
+West Ham,0,4,0,4,-4,0,L
