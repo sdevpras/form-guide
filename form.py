@@ -122,14 +122,16 @@ def make_table(url, formfile, tablefile):
     local_form_write.insert(0, ['Team', 'GF(Individual)', 'GA(Individual)', 'GF(Cumulative)', 'GA(Cumulative)', 'GD',
                                 'Points(6)', 'Form'])
 
-    table_write('pltable.csv', local_table_write)
-    table_write('plform.csv', local_form_write)
+    table_write(tablefile, local_table_write)
+    table_write(formfile, local_form_write)
 
     print('Done!')
 
 
 def main():
     make_table('https://www.bbc.co.uk/sport/football/premier-league/table', 'plform.csv', 'pltable.csv')
+    make_table('https://www.bbc.co.uk/sport/football/french-ligue-one/table', 'l1form.csv', 'l1table.csv')
+
 
 if __name__ == '__main__':
     main()
