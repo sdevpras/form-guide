@@ -131,6 +131,9 @@ def make_table(url, formfile, tablefile):
 def main():
     make_table('https://www.bbc.co.uk/sport/football/premier-league/table', 'plform.csv', 'pltable.csv')
     make_table('https://www.bbc.co.uk/sport/football/french-ligue-one/table', 'l1form.csv', 'l1table.csv')
+    make_table('https://www.bbc.co.uk/sport/football/spanish-la-liga/table', 'llform.csv', 'lltable.csv')
+    make_table('https://www.bbc.co.uk/sport/football/italian-serie-a/table', 'saform.csv', 'satable.csv')
+    make_table('https://www.bbc.co.uk/sport/football/german-bundesliga/table', 'blform.csv', 'bltable.csv')
 
 
 if __name__ == '__main__':
